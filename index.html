@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JANTUNG EMAS INDONESIA - Terima Jual Emas Dengan Harga Terbaik</title>
+    <meta name="description" content="Jantung Emas Indonesia - Terima Jual Emas dengan harga terbaik. Melayani emas batangan, perhiasan, tanpa surat, rusak, dinar dengan harga pasaran terbaik.">
+    <meta name="keywords" content="terima jual emas dengan harga terbaik, jual emas tanpa surat, tempat jual emas terbaik, buyback emas antam, jual emas perhiasan rusak, harga emas hari ini">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="JANTUNG EMAS INDONESIA - Terima Jual Emas Dengan Harga Terbaik">
+    <meta property="og:description" content="Terima Emas Batangan, Perhiasan, Tanpa Surat, Rusak / Patah, Sebelah. Timbang Transparan & Langsung Cair Detik Ini!">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fcd34d',
+                            300: '#fbbf24',
+                            400: '#f59e0b',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            800: '#78350f',
+                            900: '#451a03',
+                        },
+                        darkbg: {
+                            900: '#07090e',
+                            800: '#0f1420',
+                            700: '#172033',
+                            600: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-darkbg-900 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-slate-950 overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-gold-700 via-gold-500 to-amber-600 text-slate-950 text-xs sm:text-sm font-semibold py-2 px-4 text-center flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+        <span>Harga Jual Emas Update Hari Ini | <strong id="topTicker24kPrice" class="font-extrabold text-slate-950">Rp 2.371.200 / Gram</strong></span>
+        <span class="hidden md:inline-block bg-slate-950 text-gold-300 text-xs px-2.5 py-0.5 rounded-full ml-2">Diperbarui: <span id="lastUpdatedTicker">Hari ini</span></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-darkbg-900/80 border-b border-slate-800/80 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group" title="Jantung Emas Indonesia">
+                <img src="logo.png" alt="Jantung Emas Indonesia Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_12px_rgba(245,158,11,0.6)] group-hover:scale-105 transition-transform duration-300">
+                <div>
+                    <span class="font-extrabold text-lg sm:text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-amber-500 block leading-tight">JANTUNG EMAS</span>
+                    <span class="text-[10px] tracking-widest text-slate-400 uppercase font-bold block">INDONESIA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Aligned Right -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#beranda" class="hover:text-gold-400 transition-colors">Beranda</a>
+                <a href="#harga-hari-ini" class="hover:text-gold-400 transition-colors font-bold text-gold-400 flex items-center gap-1.5">
+                    <i class="fa-solid fa-tags text-xs"></i>
+                    <span>Harga Hari Ini</span>
+                </a>
+                <a href="#kalkulator" class="hover:text-gold-400 transition-colors">Simulasi Harga</a>
+                <a href="#keunggulan" class="hover:text-gold-400 transition-colors">Keunggulan</a>
+                <a href="#cara-kerja" class="hover:text-gold-400 transition-colors">Cara Kerja</a>
+                <a href="#cabang" class="hover:text-gold-400 transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-location-dot text-gold-400 text-xs"></i>
+                    <span>Cabang</span>
+                </a>
+                <a href="#faq" class="hover:text-gold-400 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-darkbg-800/95 border-b border-slate-800/80 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3">
+            <a href="#beranda" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-gold-400">Beranda</a>
+            <a href="#harga-hari-ini" class="block px-3 py-2 rounded-lg text-base font-bold text-gold-400 hover:bg-slate-800">Daftar Harga Hari Ini</a>
+            <a href="#kalkulator" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-gold-400">Simulasi Harga</a>
+            <a href="#keunggulan" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-gold-400">Keunggulan</a>
+            <a href="#cara-kerja" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-gold-400">Cara Kerja</a>
+            <a href="#cabang" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-gold-400">Cabang / Outlet Kami</a>
+            <a href="#faq" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-gold-400">FAQ</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6281234567890?text=Halo%20Jantung%20Emas%20Indonesia,%20saya%20ingin%20konsultasi%20jual%20emas" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 text-white font-bold shadow-lg shadow-emerald-500/20">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Hubungi WA Fast Response</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH SMOOTH 3-SLIDE CAROUSEL -->
+    <section id="beranda" class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+        <!-- Glow Orbs -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gold-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <!-- 3 SLIDES CONTAINER WITH ULTRA-SMOOTH TRANSITIONS -->
+            <div id="heroSliderContainer" class="relative min-h-[300px] sm:min-h-[320px] flex items-center justify-center">
+                <!-- Dynamic 3 Slides Rendered via script.js -->
+            </div>
+
+            <!-- SLIDER NAVIGATION CONTROLS (DOTS & ARROWS) -->
+            <div class="flex items-center justify-center gap-5 mt-6">
+                <button id="sliderPrevBtn" aria-label="Previous slide" class="w-10 h-10 rounded-full bg-slate-900/90 border border-slate-700/80 hover:border-gold-500 text-slate-300 hover:text-white flex items-center justify-center transition hover:scale-110 shadow-lg">
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+                </button>
+                
+                <div id="sliderDots" class="flex items-center gap-2.5">
+                    <!-- Dots rendered dynamically -->
+                </div>
+
+                <button id="sliderNextBtn" aria-label="Next slide" class="w-10 h-10 rounded-full bg-slate-900/90 border border-slate-700/80 hover:border-gold-500 text-slate-300 hover:text-white flex items-center justify-center transition hover:scale-110 shadow-lg">
+                    <i class="fa-solid fa-chevron-right text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Hero Action Buttons Center -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+                <a href="#harga-hari-ini" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-amber-600 text-slate-950 font-extrabold text-base shadow-xl shadow-gold-500/25 hover:scale-[1.03] transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Lihat Daftar Harga Hari Ini</span>
+                </a>
+
+                <a href="https://wa.me/6281234567890?text=Halo%20Jantung%20Emas%20Indonesia,%20saya%20mau%20jual%20emas" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-base border border-slate-700 hover:border-gold-500/50 flex items-center justify-center gap-2 transition duration-300">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                    <span>Konsultasi WA</span>
+                </a>
+            </div>
+
+            <!-- Trust Points Badges -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-12 max-w-2xl mx-auto text-left">
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 font-bold">
+                        <i class="fa-solid fa-file-circle-xmark"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">Tanpa Surat</h4>
+                        <p class="text-[11px] text-slate-400">Tetap Dibeli Tinggi</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                    <div class="w-9 h-9 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 font-bold">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">Timbangan Presisi</h4>
+                        <p class="text-[11px] text-slate-400">Akurasi 0.01 Gram</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800 col-span-2 sm:col-span-1">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 font-bold">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">Cair Instant</h4>
+                        <p class="text-[11px] text-slate-400">Cash / Transfer</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SECTION: TAMPILAN HARGA HARI INI (COMPACT & RINGKAS KOLEKTIF) -->
+    <section id="harga-hari-ini" class="py-16 bg-darkbg-800/60 relative border-y border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Title Header -->
+            <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-extrabold uppercase tracking-widest">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Harga Hari Ini</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Daftar Harga Hari Ini
+                </h2>
+                <p class="text-slate-400 text-sm">
+                    Daftar lengkap kadar emas dan harga per gram terbaru.
+                </p>
+            </div>
+
+            <!-- Price Table Card (COMPACT MAX-W-XL CONTAINER) -->
+            <div class="bg-darkbg-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl max-w-xl mx-auto">
+
+                <!-- Search / Filter Bar -->
+                <div class="p-4 bg-slate-900/90 border-b border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div class="relative w-full sm:w-60">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+                        <input type="text" id="searchKaratInput" placeholder="Cari kadar (misal: 18K)..." class="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:outline-none focus:border-gold-500 transition">
+                    </div>
+                    <div class="text-xs text-slate-400 flex items-center gap-1.5 shrink-0">
+                        <i class="fa-solid fa-clock text-gold-400"></i>
+                        <span><strong id="lastUpdatedDate" class="text-slate-200">Hari ini</strong></span>
+                    </div>
+                </div>
+
+                <!-- 2-Column Table (KADAR & HARGA / GRAM - IDEAL COMPACT SPACING) -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm" id="priceTableMain">
+                        <thead class="bg-slate-950 text-slate-300 font-bold text-xs uppercase tracking-wider border-b border-slate-800">
+                            <tr>
+                                <th class="py-3.5 px-8 w-1/2">KADAR</th>
+                                <th class="py-3.5 px-8 text-right w-1/2">HARGA / GRAM</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/80 font-medium" id="priceTableBody">
+                            <!-- Populated via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Footer Note -->
+                <div class="p-4 bg-slate-950 text-xs text-slate-400 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-2">
+                    <p><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Harga murni tanpa potongan.</p>
+                    <a href="#kalkulator" class="text-gold-400 hover:underline font-bold flex items-center gap-1">
+                        <span>Kalkulator Emas</span>
+                        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INTERACTIVE GOLD CALCULATOR SECTION -->
+    <section id="kalkulator" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+                <!-- Left Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-gold-400 text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Simulasi Interaktif</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Kalkulator Hitung <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-amber-500">Nilai Jual Emas Anda</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Pilih jenis emas, bentuk, kadar (24K+ hingga 6K), dan masukkan berat dalam gram. Kalkulator ini secara otomatis mengkalkulasi dana yang akan Anda terima berdasarkan daftar harga update hari ini.
+                    </p>
+                </div>
+
+                <!-- Right Calculator Card -->
+                <div class="lg:col-span-7">
+                    <div class="bg-darkbg-800 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-6">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-calculator text-gold-400"></i>
+                                <span>Kalkulator Jual Emas</span>
+                            </h3>
+                            <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                                Harga Terbaru
+                            </span>
+                        </div>
+
+                        <form id="goldCalcForm" class="space-y-5" onsubmit="event.preventDefault();">
+
+                            <!-- 1. Jenis Emas -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-2">1. Jenis Emas</label>
+                                <select id="jenisEmasSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:outline-none focus:border-gold-500 transition">
+                                    <option value="Logam Mulia" selected>Logam Mulia</option>
+                                    <option value="Perhiasan">Perhiasan</option>
+                                </select>
+                            </div>
+
+                            <!-- 2. Bentuk Emas -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-2">2. Bentuk Emas</label>
+                                <select id="bentukEmasSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:outline-none focus:border-gold-500 transition">
+                                    <!-- Populated dynamically via JS based on Jenis Emas -->
+                                </select>
+                            </div>
+
+                            <!-- 3. Pilih Kadar Emas -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-2">3. Pilih Kadar Emas</label>
+                                <select id="karatSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:outline-none focus:border-gold-500 transition">
+                                    <!-- Populated via JS -->
+                                </select>
+                            </div>
+
+                            <!-- 4. Masukkan Berat (Gram) -->
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="block text-xs font-bold uppercase text-slate-300">4. Masukkan Berat (Gram)</label>
+                                    <span class="text-xs text-slate-400">Desimal pakai titik (.)</span>
+                                </div>
+                                <div class="relative">
+                                    <input type="number" id="weightInput" step="0.01" min="0.1" value="10" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-4 pr-16 py-3 text-lg font-bold text-white focus:outline-none focus:border-gold-500 transition">
+                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-bold text-gold-400">GRAM</span>
+                                </div>
+
+                                <!-- Quick Weight Chips -->
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 transition" data-gram="1">1 gr</button>
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 transition" data-gram="3">3 gr</button>
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 transition" data-gram="5">5 gr</button>
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 transition" data-gram="10">10 gr</button>
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 transition" data-gram="25">25 gr</button>
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 transition" data-gram="50">50 gr</button>
+                                    <button type="button" class="quick-gram text-xs font-semibold px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-300 hover:text-white transition" data-gram="100">100 gr</button>
+                                </div>
+                            </div>
+
+                            <!-- 5. Pilih Cabang / Outlet Terdekat -->
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-300 mb-2">5. Pilih Cabang / Outlet Terdekat</label>
+                                <select id="calcOutletSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:outline-none focus:border-gold-500 transition">
+                                    <!-- Populated dynamically via JS -->
+                                </select>
+                            </div>
+
+                            <!-- Calculation Result -->
+                            <div class="p-6 rounded-2xl bg-gradient-to-br from-gold-500/10 via-slate-900 to-darkbg-900 border border-gold-500/30 text-center space-y-2">
+                                <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block">Estimasi Uang Cair Yang Anda Terima:</span>
+                                <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-amber-400" id="totalResultPrice">
+                                    Rp 000.000.000
+                                </div>
+                                <p class="text-[11px] text-slate-400" id="calcDetailText">Estimasi 10 gram 24K @ Rp 2.280.000 / gram</p>
+                            </div>
+
+                            <!-- CTA Submit directly to WA -->
+                            <button type="button" id="calcWaBtn" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-green-600 text-white font-extrabold text-base shadow-xl shadow-emerald-500/25 hover:brightness-110 hover:scale-[1.01] transition duration-300 flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Klaim Harga Ini via WhatsApp</span>
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CABANG / OUTLET KAMI -->
+    <section id="cabang" class="py-16 bg-darkbg-800/40 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="text-gold-400 text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">
+                    <i class="fa-solid fa-location-dot"></i> Jangkauan Outlet
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Bawa Langsung Emasmu</h2>
+                <p class="text-slate-400 text-sm">
+                    Kunjungi outlet terdekat kami dari lokasi Anda.
+                </p>
+            </div>
+
+            <!-- Dynamic Outlets Container -->
+            <div id="outletsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Rendered dynamically by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN SECTION -->
+    <section id="keunggulan" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-gold-400 text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">Keunggulan Utama</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Mengapa Jual Emas di Jantung Emas Indonesia?</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- 1. Harga Terbaik Seindonesia -->
+                <div class="bg-darkbg-800 border border-slate-800 p-6 rounded-2xl hover:border-gold-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Harga Terbaik Seindonesia</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Penawaran harga buyback emas tertinggi & transparan mengikuti pergerakan harga emas murni hari ini.</p>
+                </div>
+
+                <!-- 2. Pelayanan Ramah dan Nyaman -->
+                <div class="bg-darkbg-800 border border-slate-800 p-6 rounded-2xl hover:border-gold-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pelayanan Ramah & Nyaman</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Tim profesional siap melayani Anda secara ramah, sopan, jujur, dan mengutamakan kenyamanan Anda.</p>
+                </div>
+
+                <!-- 3. Penimbangan Digital Transparan -->
+                <div class="bg-darkbg-800 border border-slate-800 p-6 rounded-2xl hover:border-gold-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Penimbangan Digital Transparan</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Timbangan presisi 0.01g & terbuka secara jujur di depan mata Anda.</p>
+                </div>
+
+                <!-- 4. Pengecekan Kadar -->
+                <div class="bg-darkbg-800 border border-slate-800 p-6 rounded-2xl hover:border-gold-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pengecekan Kadar</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Pengujian kadar emas presisi & Akurat menggunakan teknologi fluoresensi XRF canggih di tempat.</p>
+                </div>
+
+                <!-- 5. Pencairan Seketika -->
+                <div class="bg-darkbg-800 border border-slate-800 p-6 rounded-2xl hover:border-gold-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pencairan Seketika</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Uang langsung masuk ke rekening bank detik itu juga.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA SECTION -->
+    <section id="cara-kerja" class="py-16 bg-darkbg-800/40 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-gold-400 text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">4 Langkah Mudah</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Proses Menjual Emas</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-darkbg-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 font-black text-lg flex items-center justify-center mx-auto">1</div>
+                    <h4 class="font-bold text-white text-base">Konsultasi WA</h4>
+                    <p class="text-xs text-slate-400">Kirim foto & detail emas untuk estimasi awal.</p>
+                </div>
+                <div class="bg-darkbg-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 font-black text-lg flex items-center justify-center mx-auto">2</div>
+                    <h4 class="font-bold text-white text-base">Datang ke Outlet</h4>
+                    <p class="text-xs text-slate-400">Kunjungi cabang outlet terdekat lokasi Anda.</p>
+                </div>
+                <div class="bg-darkbg-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 font-black text-lg flex items-center justify-center mx-auto">3</div>
+                    <h4 class="font-bold text-white text-base">Pengujian Kadar & Karat</h4>
+                    <p class="text-xs text-slate-400">Penimbangan digital & tes kadar emas menggunakan XRF.</p>
+                </div>
+                <div class="bg-darkbg-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500 text-white font-black text-lg flex items-center justify-center mx-auto">4</div>
+                    <h4 class="font-bold text-white text-base">Uang Cair Instant</h4>
+                    <p class="text-xs text-slate-400">Pembayaran transfer bank dengan instan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-gold-400 text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">FAQ</span>
+                <h2 class="text-3xl font-extrabold text-white">Pertanyaan Sering Diajukan</h2>
+            </div>
+            <div class="space-y-3" id="faqAccordion">
+                <div class="bg-darkbg-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center">
+                        <span>Apakah Terima Berbagaimacam Emas?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 text-xs"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-400 border-t border-slate-800/60 pt-3">
+                        Ya Kami Terima Emas Logam Mulia dan Berbagai Macam Emas Perhiasan.
+                    </div>
+                </div>
+                <div class="bg-darkbg-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center">
+                        <span>Apakah Emas Rusak atau Tanpa Surat Diterima?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 text-xs"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-400 border-t border-slate-800/60 pt-3">
+                        Ya Kami Terima Emas dengan Segala Kondisi. Tanpa Surat, Emas Patah, Emas Rusak, Emas Sebelah, Emas Putus dll.
+                    </div>
+                </div>
+                <div class="bg-darkbg-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center">
+                        <span>Dokumen dan Syarat Apa Saja yang Harus Dibawa?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 text-xs"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-400 border-t border-slate-800/60 pt-3">
+                        Pastikan anda Membawa KTP, No rekening, Serta Surat Kuasa Jika Emas Miliki Orang Lain.
+                    </div>
+                    </div>
+                <div class="bg-darkbg-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left font-bold text-sm text-white flex justify-between items-center">
+                        <span>Apakah Pengecekan Berat dan Kadar Emas Kena Biaya?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-400 text-xs"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-xs text-slate-400 border-t border-slate-800/60 pt-3">
+                        Pengecekan Berat dan Kadar Tidak Dikenakan Biaya Alias Gratis.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkbg-900 border-t border-slate-800 py-10 text-slate-400 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <img src="logo.png" alt="Jantung Emas Logo" class="w-7 h-7 object-contain">
+                <span class="text-slate-200 font-extrabold text-sm">JANTUNG EMAS INDONESIA</span>
+            </div>
+            <p class="text-slate-500">Terima Jual Emas Batangan dan Perhiasan dengan Harga Terbaik</p>
+            <div class="pt-2 text-[11px] text-slate-600">
+                <a href="admin.html" target="_blank" class="hover:text-slate-400 transition underline">Portal Pengelolaan Internal Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6282122126634?text=Halo%20Jantung%20Emas%20Indonesia,%20saya%20ingin%20konsultasi%20jual%20emas" target="_blank" class="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl shadow-emerald-500/40 hover:scale-110 transition duration-300" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+        <span class="hidden sm:inline font-extrabold text-sm">Konsultasi WA Hari Ini</span>
+    </a>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
