@@ -297,7 +297,8 @@
                             <div>
                                 <label class="block text-xs font-bold uppercase text-slate-300 mb-2">1. Jenis Emas</label>
                                 <select id="jenisEmasSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white font-bold focus:outline-none focus:border-gold-500 transition">
-                                    <option value="Logam Mulia" selected>Logam Mulia</option>
+                                    <option value="" selected disabled>-- Pilih Jenis Emas --</option>
+                                    <option value="Logam Mulia">Logam Mulia</option>
                                     <option value="Perhiasan">Perhiasan</option>
                                 </select>
                             </div>
@@ -325,7 +326,7 @@
                                     <span class="text-xs text-slate-400">Desimal pakai titik (.)</span>
                                 </div>
                                 <div class="relative">
-                                    <input type="number" id="weightInput" step="0.01" min="0.1" value="10" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-4 pr-16 py-3 text-lg font-bold text-white focus:outline-none focus:border-gold-500 transition">
+                                    <input type="number" id="weightInput" step="0.01" min="0.1" value="" placeholder="Masukkan berat (contoh: 10)" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-4 pr-16 py-3 text-lg font-bold text-white focus:outline-none focus:border-gold-500 transition">
                                     <span class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-bold text-gold-400">GRAM</span>
                                 </div>
 
@@ -353,9 +354,9 @@
                             <div class="p-6 rounded-2xl bg-gradient-to-br from-gold-500/10 via-slate-900 to-darkbg-900 border border-gold-500/30 text-center space-y-2">
                                 <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block">Estimasi Uang Cair Yang Anda Terima:</span>
                                 <div class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-400 to-amber-400" id="totalResultPrice">
-                                    Rp 000.000.000
+                                    Rp 0
                                 </div>
-                                <p class="text-[11px] text-slate-400" id="calcDetailText">Estimasi 10 gram 24K @ Rp 2.280.000 / gram</p>
+                                <p class="text-[11px] text-slate-400" id="calcDetailText">Silakan lengkapi data di atas untuk melihat estimasi.</p>
                             </div>
 
                             <!-- CTA Submit directly to WA -->
